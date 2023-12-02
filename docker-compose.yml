@@ -1,0 +1,15 @@
+version: '3'
+services:
+  test-runner:
+    build: .
+    volumes:
+      - .:/app
+    depends_on:
+      - playwright
+    environment:
+      - PLAYWRIGHT_BROWSERS_PATH=/usr/bin
+
+  playwright:
+    image: mcr.microsoft.com/playwright:v1.40.0-jammy
+    volumes:
+      - /usr/bin
