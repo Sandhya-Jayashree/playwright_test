@@ -23,3 +23,6 @@ jobs:
 
     - name: Run Playwright tests
       run: npm test
+
+    - name: Show test reports
+      run: npm run test-report

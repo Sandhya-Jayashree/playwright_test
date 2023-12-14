@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test --project chromium"
+    "test": "npx playwright test --project chromium",
+    "test-report": "npx playwright show-report"
   },
   "keywords": [],
   "author": "",

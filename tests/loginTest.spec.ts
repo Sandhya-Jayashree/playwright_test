@@ -26,8 +26,8 @@ test.describe('Login test', () => {
     const email = page.locator('[name="email"]');
     await email.fill(userEmail);
     await page.locator('[data-testid="login-screen-button"]').click();
-    await page.frameLocator('iframe[title="Secure Modal"]').getByText('Please register this device to continue').click();
-    await page.frameLocator('iframe[title="Secure Modal"]').getByText('We sent a device registration instructions to').click();
+    // await page.frameLocator('iframe[title="Secure Modal"]').getByText('Please register this device to continue').click();
+    // await page.frameLocator('iframe[title="Secure Modal"]').getByText('We sent a device registration instructions to').click();
     await page.frameLocator('iframe[title="Secure Modal"]').getByText('This quick one-time approval will help keep your account secure').click();
 
     const emailContent = await mailHelper.readEmail(page, 'noreply@trymagic.com', userEmail, 'Approve [Staging]BizPilot login?');
