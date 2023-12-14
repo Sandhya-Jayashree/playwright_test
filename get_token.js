@@ -7,7 +7,7 @@ const TOKEN_PATH = 'token.json';
 
 const credentials = require('./credentials.json'); // Replace with the path to your client_secret.json
 
-const { client_id, client_secret, redirect_uris } = credentials.installed || credentials.web;
+const { client_id, client_secret, redirect_uris } = credentials.installed;
 
 const oAuth2Client = new google.auth.OAuth2(client_id, client_secret, redirect_uris[0]);
 
