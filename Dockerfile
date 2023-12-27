@@ -13,4 +13,4 @@ COPY . /app
 EXPOSE 3000
 
 # Run app.js when the container launches
-CMD ["npm", "test"]
+CMD ["npm", "run", "playwright:headless"]
