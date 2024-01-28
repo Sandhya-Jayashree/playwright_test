@@ -28,13 +28,26 @@ export const mailHelper = {
 
     while (!emails || emails.length === 0 && Date.now() - startTime < pollingTimeout) {
       console.log(`Polling mail from: ${senderEmail}...`);
-      await page.waitForTimeout(2000);
-      emails = await mailHelper.messageChecker(senderEmail, receiverEmail, subject);
+      await page.waitForTimeout(7000);
+      let retries = 0;
+    const maxRetries = 5;
+      const checkForEmails = async () => {
+        emails = await mailHelper.messageChecker(senderEmail, receiverEmail, subject);
+        retries++;
+        if (!emails.length && retries < maxRetries) {
+          await page.waitForTimeout(2000); // wait 2 seconds before retrying
+          return checkForEmails();
+        }
+        return emails;
+      };
+      
+      emails = await checkForEmails();
     }
 
     if (!emails || emails.length === 0) {
       throw new Error(`No emails with subject '${subject}' received within the timeout.`);
     }
+console.log(emails);
 
     return emails[0].body.text;
   },
