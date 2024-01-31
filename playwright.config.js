@@ -21,19 +21,7 @@ module.exports = defineConfig({
   /* Opt out of parallel tests on CI. */
   // workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: [
-    [
-      "./node_modules/playwright-slack-report/dist/src/SlackReporter.js",
-      {
-        slackOAuthToken: "xoxb-1714875954497-6504024620614-pRAubQOEHiuZduSvZPg5YHBK",
-        channels: ["ops-staging"], // provide one or more Slack channels
-        sendResults: "always", // "always" , "on-failure", "off"
-      },
-    ],
-    ["dot"],
-    ["list"],
-    ["html"],
-  ],
+  reporter:"html",
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
@@ -50,20 +38,22 @@ module.exports = defineConfig({
   timeout:100000,
   /* Configure projects for major browsers */
   projects: [
+    { name: 'setup', testMatch: /.*\.setup\.ts/ },
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: { ...devices['Desktop Chrome'],storageState: 'playwright/.auth/user.json', },
+    dependencies: ['setup'],
     },
 
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
-    },
+    // {
+    //   name: 'firefox',
+    //   use: { ...devices['Desktop Firefox'] },
+    // },
 
-    {
-      name: 'webkit',
-      use: { ...devices['Desktop Safari'] },
-    },
+    // {
+    //   name: 'webkit',
+    //   use: { ...devices['Desktop Safari'] },
+    // },
 
     /* Test against mobile viewports. */
     // {
