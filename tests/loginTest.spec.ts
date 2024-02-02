@@ -62,4 +62,5 @@ test('test', async ({ page }) => {
   await page.goto('https://stagingv3.bizpilot.in/');
   await page.waitForTimeout(7000);
   await page.locator('[data-testid="add-new-button"]').click();
+  
 });
