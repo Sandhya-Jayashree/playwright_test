@@ -1,6 +1,6 @@
 // @ts-check
 const { defineConfig, devices } = require('@playwright/test');
-require("dotenv").config()
+// require("dotenv").config()
 
 /**
  * Read environment variables from file.
@@ -12,7 +12,7 @@ require("dotenv").config()
  * @see https://playwright.dev/docs/test-configuration
  */
 
-const runId = process.env.RUN_ID;
+const runId = process.env.RUN_ID?process.env.RUN_ID:123;
 console.log(runId)
 const githubactionsUrl  = `https://github.com/Sandhya-Jayashree/playwright_test/actions/runs/${runId}`;
 console.log(githubactionsUrl);
@@ -40,7 +40,6 @@ module.exports = defineConfig({
             value:githubactionsUrl
           }
         ],
-        githubActionsUrl:githubactionsUrl
       },
     ],
     ["dot"],

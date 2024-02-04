@@ -2,37 +2,37 @@
   "cookies": [
     {
       "name": "_hjSessionUser_3144856",
-      "value": "eyJpZCI6IjBlMDJiNTVkLWZkMTktNWE0Ni05NGZlLWUwYzY0MmY3ZWYzYyIsImNyZWF0ZWQiOjE3MDY3MjI5NzE1MzksImV4aXN0aW5nIjp0cnVlfQ==",
+      "value": "eyJpZCI6IjlkN2JhNDQ4LTczYmYtNWM5OC1hZmU5LWI0ZmI4ZmEyNTg1YyIsImNyZWF0ZWQiOjE3MDcwNjg2MDY0MTksImV4aXN0aW5nIjp0cnVlfQ==",
       "domain": ".bizpilot.in",
       "path": "/",
-      "expires": 1738258971,
+      "expires": 1738604606,
       "httpOnly": false,
       "secure": true,
       "sameSite": "None"
     },
     {
       "name": "_hjSession_3144856",
-      "value": "eyJpZCI6IjExZTJkM2Y4LTQxOTUtNDQxYy04NDJjLTY5ZjAxNzY4MGQ2NSIsImMiOjE3MDY3MjI5NzE1NDEsInMiOjEsInIiOjEsInNiIjowLCJzciI6MCwic2UiOjAsImZzIjoxLCJzcCI6MH0=",
+      "value": "eyJpZCI6Ijc4NjlmZThmLTBkOGEtNDQ4My1iZWY5LWU5NWU0NTg2NTA1NyIsImMiOjE3MDcwNjg2MDY0MjMsInMiOjEsInIiOjEsInNiIjowLCJzciI6MCwic2UiOjAsImZzIjoxLCJzcCI6MH0=",
       "domain": ".bizpilot.in",
       "path": "/",
-      "expires": 1706724808,
+      "expires": 1707070444,
       "httpOnly": false,
       "secure": true,
       "sameSite": "None"
     },
     {
       "name": "__cf_bm",
-      "value": "8ux0DrSpA_Jh2wvsFQ8adPHWY6RA.w2q39Y2bz7SecY-1706722978-1-ATWLnm99MwonhhAZxyzcEE+7jXdnpJczHNgqzT3u3jF+jCViJ/2ZaKv/Kvety1LKA6SBqlG2IvO6kns5szDWd04=",
+      "value": "fHGU44HE1NQ3Guf65n_UHbnMglIwtlPRtdFVk3m1jek-1707068613-1-AcOMds7PjEiazzFAhJWNbKOsZ6VRjXBmzaZUkK4SuR0D34cQdKo+RadC9SFOFJ/vEifXLyxmrZ1FmzkTnnKJTZw=",
       "domain": ".magic.link",
       "path": "/",
-      "expires": 1706724779.477585,
+      "expires": 1707070414.864289,
       "httpOnly": true,
       "secure": true,
       "sameSite": "None"
     },
     {
       "name": "__cfruid",
-      "value": "67db937c8503584e8c13705c812dc2b628bf4c66-1706722978",
+      "value": "692f9b5dcfbc56fc800b786b818c2878fc127174-1707068613",
       "domain": ".magic.link",
       "path": "/",
       "expires": -1,
@@ -42,20 +42,20 @@
     },
     {
       "name": "ajs_anonymous_id",
-      "value": "b95c6ae9-b7e5-4fd9-af9f-d66fb2218680",
+      "value": "b2eca3ef-7de8-42c3-aa0f-0cda2d93f0e9",
       "domain": ".magic.link",
       "path": "/",
-      "expires": 1738258996,
+      "expires": 1738604635,
       "httpOnly": false,
       "secure": false,
       "sameSite": "Lax"
     },
     {
       "name": "_dd_s",
-      "value": "logs=1&id=ebb8e1fc-0d5e-40e0-b435-cebddeec7be7&created=1706722979690&expire=1706723897097&rum=0",
+      "value": "logs=1&id=a28fe1af-f5a1-44ce-bce8-27a51da1f8c5&created=1707068615243&expire=1707069536218&rum=0",
       "domain": "auth.magic.link",
       "path": "/",
-      "expires": 1706723912,
+      "expires": 1707069553,
       "httpOnly": false,
       "secure": true,
       "sameSite": "None"
@@ -67,11 +67,19 @@
       "localStorage": [
         {
           "name": "refresh_token",
-          "value": "\"e476efed6287b318248103e30ecb9e1a4d9ce711be6c4038901ae18f828ffa335e28018af3b7dacd\""
+          "value": "\"44760d529bc6d7714ef064d6ba8d6a4221d5251d88fd361a417b2d0a5f6174600eb74b072625bae1\""
         },
         {
-          "name": "olvy-script-load-bizpilothq",
-          "value": "2024-01-31T17:43:32.614Z"
+          "name": "session_id",
+          "value": "9a2f7708-e444-4312-aa71-eada77950e05"
+        },
+        {
+          "name": "user",
+          "value": "{\"id\":211,\"name\":\"Cy Test\",\"email\":\"cypressuseracc@gmail.com\",\"role_id\":3,\"designation\":null,\"profile_pic\":\"\",\"current_organization_db_id\":86,\"organization_id\":\"60017461521\",\"is_trial\":1}"
+        },
+        {
+          "name": "hjActiveViewportIds",
+          "value": "[{\"id\":\"bbef122e-1c0a-4a59-a337-3a095963d87a\",\"expireTimestamp\":1707090207165}]"
         },
         {
           "name": "activeOrg",
@@ -82,20 +90,8 @@
           "value": "[{\"name\":\"bizpilot 3\",\"short_name\":\"bizpilot 3\",\"organization_id\":\"60011106227\",\"logo_url\":\"https://api-dev.bizpilot.in/settings/templates/invoicelogo/2-da7cb5ef39ebfbe4c4c3edb9b2f532ba4c09ee5c070c27cf8708a6818d31e20fe1e00f05ceb204a6b48dd4c2bf6313d7\"},{\"isOrgNotSupported\":false,\"organization_id\":\"60017461521\",\"name\":\"Cypress1\",\"contact_name\":\"cypressuseracc\",\"email\":\"cypressuseracc@gmail.com\",\"source\":2,\"country\":\"India\",\"country_code\":\"IN\",\"org_settings\":true,\"is_ziedition\":false,\"custom_field_type\":2,\"custom_fields\":[{\"index\":1,\"label\":\"LUT\",\"value\":\"\"},{\"index\":2,\"label\":\"test\",\"value\":\"\"},{\"index\":3,\"label\":\"test2\",\"value\":\"\"},{\"index\":4,\"label\":\"177171\",\"value\":\"\"},{\"index\":5,\"label\":\"\",\"value\":\"\"}],\"is_sku_enabled\":true,\"phone\":\"+91 - 8527291557, +91 - 9906363694\",\"org_type\":\"live\",\"state_code\":\"DL\",\"state\":\"Delhi\",\"zoho_one_org\":\"\",\"zi_zb_edition\":1,\"org_created_app_source\":1,\"zi_zb_client\":1,\"is_solo_org\":false,\"partners_domain\":\"\",\"version\":\"india\",\"version_formatted\":\"India\",\"is_search360_enabled\":\"true\",\"is_sales_inclusive_tax_enabled\":false,\"sales_tax_type\":\"exclusive\",\"tax_group_enabled\":true,\"language_code\":\"en\",\"fiscal_year_start_month\":3,\"time_zone\":\"Asia/Calcutta\",\"field_separator\":\"/\",\"time_zone_formatted\":\"(GMT 5:30) India Standard Time (Asia/Calcutta)\",\"can_change_timezone\":true,\"digital_signature_mode\":\"dsign_dongle\",\"is_dsign_required\":false,\"can_sign_invoice\":false,\"is_user_dsign_mandatory\":true,\"currency_id\":\"1053726000000000064\",\"currency_code\":\"INR\",\"currency_symbol\":\"₹\",\"currency_format\":\"#,##,##0.00\",\"price_precision\":2,\"org_joined_app_list\":[\"books\"],\"is_designated_zone\":false,\"is_free_zone\":false,\"is_registered_for_composite_scheme\":false,\"is_sales_reverse_charge_enabled\":false,\"is_export_with_payment_enabled\":false,\"is_registered_for_tax\":true,\"is_tax_registered\":true,\"is_international_trade_enabled\":false,\"is_gst_india_version\":true,\"is_registered_for_gst\":true,\"isOrgActive\":true,\"plan_type\":100,\"plan_name\":\"FREE\",\"plan_period\":\"\",\"account_created_date\":\"2022-10-17\",\"account_created_date_formatted\":\"17/10/2022\",\"is_org_active\":true,\"is_quick_setup_completed\":true,\"is_trial_period_extended\":false,\"is_trial_expired\":false,\"is_invoice_pmt_tds_allowed\":true,\"is_hsn_or_sac_enabled\":true,\"mode\":\"live\",\"can_show_document_tab\":true,\"is_scan_preference_enabled\":true,\"is_user_accountant\":false,\"user_status\":1,\"user_status_formatted\":\"Active\",\"org_action\":\"goto\",\"AppList\":[\"books\"],\"is_zpayroll_grid\":false,\"is_default_org\":false,\"short_name\":\"Cypress1\"}]"
         },
         {
-          "name": "session_id",
-          "value": "7751822c-f600-4895-b374-628dc9ae7cd5"
-        },
-        {
-          "name": "user",
-          "value": "{\"id\":211,\"name\":\"Cy Test\",\"email\":\"cypressuseracc@gmail.com\",\"role_id\":3,\"designation\":null,\"profile_pic\":\"\",\"current_organization_db_id\":86,\"organization_id\":\"60017461521\",\"is_trial\":1}"
-        },
-        {
-          "name": "hjActiveViewportIds",
-          "value": "[{\"id\":\"ff6eebae-0233-4f15-8319-48306f50384b\",\"expireTimestamp\":1706744572092}]"
-        },
-        {
           "name": "token",
-          "value": "\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIxMSwiaWQiOjIxMSwiaWF0IjoxNzA2NzIzMDEwLCJleHAiOjE3MDY3MzAyMTB9.XVQmZwuIr3q1v0D7b5BS4PS8OrbkiZ2G3dQSQ0OYD8Y\""
+          "value": "\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOjIxMSwiaWQiOjIxMSwiaWF0IjoxNzA3MDY4NjUxLCJleHAiOjE3MDcwNzU4NTF9.udSac08TgCW_FBKk569i3rRRJhD2AG0lwYdd8io9ntE\""
         }
       ]
     },
@@ -104,11 +100,11 @@
       "localStorage": [
         {
           "name": "ajs_anonymous_id",
-          "value": "\"b95c6ae9-b7e5-4fd9-af9f-d66fb2218680\""
+          "value": "\"b2eca3ef-7de8-42c3-aa0f-0cda2d93f0e9\""
         },
         {
           "name": "ld:6290d8d4377dc71563613cb0:$diagnostics",
-          "value": "{\"dataSinceDate\":1706722994067,\"droppedEvents\":0,\"eventsInLastBatch\":0,\"streamInits\":[]}"
+          "value": "{\"dataSinceDate\":1707068633040,\"droppedEvents\":0,\"eventsInLastBatch\":0,\"streamInits\":[]}"
         },
         {
           "name": "ajs_user_id",
