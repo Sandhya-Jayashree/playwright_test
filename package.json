@@ -19,6 +19,7 @@
     "playwright-slack-report": "^1.1.70"
   },
   "dependencies": {
-    "cheerio": "^1.0.0-rc.12"
+    "cheerio": "^1.0.0-rc.12",
+    "dotenv": "^16.4.1"
   }
 }

@@ -1,5 +1,6 @@
 // @ts-check
 const { defineConfig, devices } = require('@playwright/test');
+require("dotenv").config()
 
 /**
  * Read environment variables from file.
@@ -10,6 +11,10 @@ const { defineConfig, devices } = require('@playwright/test');
 /**
  * @see https://playwright.dev/docs/test-configuration
  */
+
+const runId = process.env.GITHUB_RUN_ID;
+const githubactionsUrl  = `https://github.com/Sandhya-Jayashree/playwright_test/actions/runs/${runId}`;
+
 module.exports = defineConfig({
   testDir: './tests',
   /* Run tests in files in parallel */
@@ -21,7 +26,20 @@ module.exports = defineConfig({
   /* Opt out of parallel tests on CI. */
   // workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter:"html",
+  reporter: [
+    [
+      "./node_modules/playwright-slack-report/dist/src/SlackReporter.js",
+      {
+        slackOAuthToken: "xoxb-1714875954497-6504024620614-pRAubQOEHiuZduSvZPg5YHBK",
+        channels: ["automation-testing"], // provide one or more Slack channels
+        sendResults: "always", // "always" , "on-failure", "off"
+        githubActionsUrl:githubactionsUrl
+      },
+    ],
+    ["dot"],
+    ["list"],
+    ["html"],
+  ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
