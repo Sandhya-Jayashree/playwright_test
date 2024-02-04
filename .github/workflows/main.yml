@@ -27,5 +27,5 @@ jobs:
       run: echo "RUN_ID=${{ github.run_id }}" >> $GITHUB_ENV
     - name: Display Environment Variables
         env:
-          RUN_ID: ${{ steps.set_run_id.outputs.RUN_ID }}
+          RUN_ID: ${{ env.RUN_ID }}
   
