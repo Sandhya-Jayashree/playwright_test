@@ -12,9 +12,9 @@ const { defineConfig, devices } = require('@playwright/test');
  * @see https://playwright.dev/docs/test-configuration
  */
 
-const runId = process.env.RUN_ID?process.env.RUN_ID:123;
+const runId = process.env.RUN_ID;
 console.log(runId)
-const githubactionsUrl  = `https://github.com/Sandhya-Jayashree/playwright_test/actions/runs/${runId}`;
+const githubactionsUrl  = process.env.RUN_ID ? `https://github.com/Sandhya-Jayashree/playwright_test/actions/runs/${runId}` : 'http://localhost:9323';
 console.log(githubactionsUrl);
 module.exports = defineConfig({
   testDir: './tests',
