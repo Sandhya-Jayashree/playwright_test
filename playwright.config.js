@@ -12,7 +12,7 @@ require("dotenv").config()
  * @see https://playwright.dev/docs/test-configuration
  */
 
-const runId = process.env.GITHUB_RUN_ID;
+const runId = process.env.RUN_ID;
 const githubactionsUrl  = `https://github.com/Sandhya-Jayashree/playwright_test/actions/runs/${runId}`;
 
 module.exports = defineConfig({
