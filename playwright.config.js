@@ -15,7 +15,7 @@ require("dotenv").config()
 const runId = process.env.RUN_ID;
 console.log(runId)
 const githubactionsUrl  = `https://github.com/Sandhya-Jayashree/playwright_test/actions/runs/${runId}`;
-
+console.log(githubactionsUrl);
 module.exports = defineConfig({
   testDir: './tests',
   /* Run tests in files in parallel */
@@ -34,6 +34,12 @@ module.exports = defineConfig({
         slackOAuthToken: "xoxb-1714875954497-6504024620614-pRAubQOEHiuZduSvZPg5YHBK",
         channels: ["automation-testing"], // provide one or more Slack channels
         sendResults: "always", // "always" , "on-failure", "off"
+        meta:[
+          {
+            key:"Github Actions url",
+            value:githubactionsUrl
+          }
+        ],
         githubActionsUrl:githubactionsUrl
       },
     ],
