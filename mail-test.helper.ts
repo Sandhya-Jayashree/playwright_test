@@ -5,7 +5,6 @@ import gmailTester from 'gmail-tester';
 
 export const mailHelper = {
   async messageChecker(fromEmail: string, toEmail: string, subject: string) {
-    console.log(fromEmail, toEmail, subject);
     const email = await gmailTester.get_messages(
       resolve(__dirname, "credentials.json"),
       resolve(__dirname, "token.json"),
@@ -47,7 +46,6 @@ export const mailHelper = {
     if (!emails || emails.length === 0) {
       throw new Error(`No emails with subject '${subject}' received within the timeout.`);
     }
-console.log(emails);
 
     return emails[0].body.text;
   },
@@ -59,7 +57,7 @@ console.log(emails);
   },
 
   async getVerificationCode(text: string) {
-    console.log("Getting the verification code from the email...");
+    
     return parseInt(text.replace(/[^0-9\.]/g, ""), 10);
   },
 
@@ -75,7 +73,7 @@ console.log(emails);
   },
 
   async getOTPCode(emailBody: string) {
-    console.log("body", emailBody);
+  
     var inputString = emailBody;
     var regex = /Login code: (\d+\s\d+)/;
     var match = regex.exec(inputString);

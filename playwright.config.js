@@ -13,6 +13,7 @@ require("dotenv").config()
  */
 
 const runId = process.env.RUN_ID;
+console.log(runId)
 const githubactionsUrl  = `https://github.com/Sandhya-Jayashree/playwright_test/actions/runs/${runId}`;
 
 module.exports = defineConfig({
