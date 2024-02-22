@@ -1,6 +1,5 @@
 // @ts-check
 const { defineConfig, devices } = require('@playwright/test');
-// require("dotenv").config()
 
 /**
  * Read environment variables from file.
@@ -11,11 +10,10 @@ const { defineConfig, devices } = require('@playwright/test');
 /**
  * @see https://playwright.dev/docs/test-configuration
  */
-
 const runId = process.env.RUN_ID;
-console.log(runId)
-const githubactionsUrl  = process.env.RUN_ID ? `https://github.com/Sandhya-Jayashree/playwright_test/actions/runs/${runId}` : 'http://localhost:9323';
-console.log(githubactionsUrl);
+const githubactionsUrl = process.env.RUN_ID ? `https://github.com/BizPilotHQ/bizpilot-frontend-3.0/actions/runs/${runId}` : 'http://localhost:9323';
+
+
 module.exports = defineConfig({
   testDir: './tests',
   /* Run tests in files in parallel */
@@ -27,25 +25,34 @@ module.exports = defineConfig({
   /* Opt out of parallel tests on CI. */
   // workers: process.env.CI ? 1 : undefined,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
+  // reporter: [
+  //   [
+  //     "./node_modules/playwright-slack-report/dist/src/SlackReporter.js",
+  //     {
+  //       slackOAuthToken: "xoxb-1714875954497-6504024620614-pRAubQOEHiuZduSvZPg5YHBK",
+  //       channels: ["ops-staging"], // provide one or more Slack channels
+  //       sendResults: "always", // "always" , "on-failure", "off"
+  //       meta: [
+  //         {
+  //           key: "Github Actions url",
+  //           value: githubactionsUrl
+  //         }
+  //       ],
+  //     },
+  //   ],
+  //   ["dot"],
+  //   ["list"],
+  //   ["html"],
+  // ],
+
   reporter: [
-    [
-      "./node_modules/playwright-slack-report/dist/src/SlackReporter.js",
-      {
-        slackOAuthToken: "xoxb-1714875954497-6504024620614-pRAubQOEHiuZduSvZPg5YHBK",
-        channels: ["automation-testing"], // provide one or more Slack channels
-        sendResults: "always", // "always" , "on-failure", "off"
-        meta:[
-          {
-            key:"Github Actions url",
-            value:githubactionsUrl
-          }
-        ],
-      },
-    ],
-    ["dot"],
-    ["list"],
-    ["html"],
-  ],
+    ['list'],
+    ['monocart-reporter', {  
+        name: "My Test Report",
+        outputFile: './test-results/report.html'
+    }]
+],
+
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
@@ -53,30 +60,31 @@ module.exports = defineConfig({
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'on',
-    video:"on",
-    screenshot:"on",
-    // headless:false,
+    video: "off",
+    screenshot: "off",
   },
-  
 
-  timeout:100000,
+
+  timeout: 100000,
   /* Configure projects for major browsers */
   projects: [
-    { name: 'setup', testMatch: /.*\.setup\.ts/ },
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'],storageState: 'playwright/.auth/user.json', },
-    dependencies: ['setup'],
+      use: {
+        ...devices['Desktop Chrome'],
+      },
     },
 
     // {
     //   name: 'firefox',
-    //   use: { ...devices['Desktop Firefox'] },
+    //   use: { ...devices['Desktop Firefox'], storageState: 'playwright/.auth/user.json' },
+    //   dependencies: ['setup'],
     // },
 
     // {
     //   name: 'webkit',
-    //   use: { ...devices['Desktop Safari'] },
+    //   use: { ...devices['Desktop Safari'], storageState: 'playwright/.auth/user.json' },
+    //   dependencies: ['setup'],
     // },
 
     /* Test against mobile viewports. */

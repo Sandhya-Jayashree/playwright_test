@@ -1,19 +1,14 @@
-import { test as setup, expect } from '@playwright/test';
-import { chromium, Browser, BrowserContext, Page } from '@playwright/test';
-import { mailHelper } from '../mail-test.helper';
+import { chromium, type FullConfig,expect } from '@playwright/test';
+import { mailHelper } from './mail-test.helper';
 
-const authFile = 'playwright/.auth/user.json';
-let browser: Browser;
-let context: BrowserContext;
-let page: Page;
-
-setup('authenticate', async () => {
-  
-    browser = await chromium.launch();
-    context = await browser.newContext({ recordVideo: { dir: 'videos/' } });
-    page = await context.newPage();
-   
-    const userEmail: string = 'cypressuseracc@gmail.com';
+async function globalSetup(config: FullConfig) {
+  const { baseURL, storageState } = config.projects[0].use;
+  const browser = await chromium.launch();
+  const page = await browser.newPage();
+  await page.goto(baseURL!);
+  let context = await browser.newContext({ recordVideo: { dir: 'videos/' } });
+ 
+  const userEmail: string = 'cypressuseracc@gmail.com';
     
     await page.goto('https://stagingv3.bizpilot.in/');
     await page.waitForTimeout(7000);
@@ -56,5 +51,8 @@ setup('authenticate', async () => {
     const currentUrl = page.url();
     const isUrlContainsHome = currentUrl.includes('home');
     expect(isUrlContainsHome).toBe(true);
-    await page.context().storageState({ path: authFile });
-  });
+  await page.context().storageState({ path: storageState as string });
+  await browser.close();
+}
+
+export default globalSetup;
